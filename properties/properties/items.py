@@ -8,7 +8,7 @@
 from scrapy.item import Item, Field
 
 
-class PropertiesItem(scrapy.Item):
+class PropertiesItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
 
@@ -18,6 +18,7 @@ class PropertiesItem(scrapy.Item):
     description = Field()
     address = Field()
     image_urls = Field()
+    h2 = Field()
 
     # Calculated fields
     images = Field()
