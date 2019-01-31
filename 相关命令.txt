@@ -1,0 +1,14 @@
+1.命令行调试(可以加上--pdb)：
+scrapy shell [url]
+2.创建项目：
+scrapy startproject [项目名（一般用properties）]
+3.创建一个爬虫：
+scrapy genspider [爬虫名] [allowed_domains(新手用‘web’)]
+4.运行爬虫：
+scrapy crawl [爬虫名]
+5.运行爬虫并保存到文件：
+scrapy crawl [爬虫名] -o [本地或远程文件名]
+6.使用指定的爬虫来解析给定的任意url（另一个调试工具）
+scrapy parse --spider=[爬虫名] url
+7.测试contract(爬虫可用性)：
+scrapy check [爬虫名]
