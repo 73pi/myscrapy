@@ -14,11 +14,9 @@ class PropertiesItem(Item):
 
     # Primary fields
     title = Field()
-    price = Field()
-    description = Field()
-    address = Field()
-    image_urls = Field()
-    h2 = Field()
+    toptitle = Field()
+    topnews = Field()
+    news = Field()
 
     # Calculated fields
     images = Field()
