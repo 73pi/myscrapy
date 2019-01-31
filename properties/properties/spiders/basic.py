@@ -14,9 +14,9 @@ class BasicSpider(scrapy.Spider):
     start_urls = ['https://voice.hupu.com/nba']
 
     def parse(self, response):
-        """This function parses a property page（contract爬虫可行测试）.
+        """This function parses a property page（contract爬虫可行测试 items是一不是L）.
         @url https://voice.hupu.com/nba
-        @returns items l
+        @returns items 1
         @scrapes title toptitle topnews news
         @scrapes url project spider server date
         """
