@@ -17,6 +17,7 @@ class PropertiesItem(Item):
     toptitle = Field()
     topnews = Field()
     news = Field()
+    comeFrom = Field()
 
     # Calculated fields
     images = Field()

@@ -12,3 +12,5 @@ scrapy crawl [爬虫名] -o [本地或远程文件名]
 scrapy parse --spider=[爬虫名] url
 7.测试contract(爬虫可用性)：
 scrapy check [爬虫名]
+8.双向爬取（多页爬取）
+scrapy crawl [爬虫名] -s CLOSESPIDER_ITEMCOUNT=[爬取数量]
