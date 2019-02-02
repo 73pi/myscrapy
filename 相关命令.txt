@@ -14,3 +14,5 @@ scrapy parse --spider=[爬虫名] url
 scrapy check [爬虫名]
 8.双向爬取（多页爬取）
 scrapy crawl [爬虫名] -s CLOSESPIDER_ITEMCOUNT=[爬取数量]
+9.使用crawlspider
+scrapy genspider -t crawl [爬虫名] [allowed_domains(新手用‘web’)]

@@ -18,7 +18,7 @@ class BasicSpider(scrapy.Spider):
     def parse(self, response):
         # Get the next index URLs and yield Requests
         # scrapy处理请求时后入先出（LIFO）的
-        # 打开调试模式，发现 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to ...，原来是二次解析的域名被过滤掉了
+        # 打开调试模式，发现 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to ...，原来是二次解析的域名被过滤掉了(主要是与allowed_domains冲突了)
         # 解决办法:在 Request 请求参数中，设置 dont_filter = True ,Request 中请求的 URL 将不通过 allowed_domains 过滤。
         # '//*[@class="page-btn-prev"]//@href'下一页按钮的链接
         next_selector = response.xpath('//*[@class="page-btn-prev"]//@href').extract()
