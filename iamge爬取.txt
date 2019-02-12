@@ -1,0 +1,11 @@
+1.需要pip安装image
+2.在settings.py中启用图像管道
+	ITEM_PIPELINES = {
+	   'scrapy.pipelines.images.ImagesPipeline': 1,
+	}
+	IMAGES_STORE = 'images'
+	IMAGES_THUMBS = {'small': (30, 30)} #缩略图像素
+3.在items.py中设置image_urls字段
+4.在脚本中：
+ l.add_xpath('image_urls', '//*[@class="artical-importantPic"][1]/img/@src',
+                    MapCompose(lambda i: urlparse.urljoin(response.url, i)))

@@ -22,6 +22,7 @@ class PropertiesItem(Item):
     # Calculated fields
     images = Field()
     location = Field()
+    image_urls = Field()
 
     # Housekeeping fields
     url = Field()

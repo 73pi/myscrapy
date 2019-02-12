@@ -1,8 +1,14 @@
 ﻿中文显示：
 在settings.py中加入：FEED_EXPORT_ENCODING = 'utf-8'
+
 error：
 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to ...
 原因：主要是与allowed_domains冲突了被过滤了
 解决方法：
 1.在allowed_domains中添加域名后部分，比如：www.baidu.com则添加baidu.com
 2.yield Request(url, callback=self.parse_item, dont_filter=True)
+
+pip install image报错
+可能是因为没安装django
+pip install Django==1.8.17（Django2.0不支持python2.7）
+安装成功后，再执行 pip install image

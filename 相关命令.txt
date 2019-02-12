@@ -1,5 +1,6 @@
-1.命令行调试(可以加上--pdb)：
+﻿1.命令行调试(可以加上--pdb)：
 scrapy shell [url]
+response.xpath('').extract()
 2.创建项目：
 scrapy startproject [项目名（一般用properties）]
 3.创建一个爬虫：
@@ -13,6 +14,6 @@ scrapy parse --spider=[爬虫名] url
 7.测试contract(爬虫可用性)：
 scrapy check [爬虫名]
 8.双向爬取（多页爬取）
-scrapy crawl [爬虫名] -s CLOSESPIDER_ITEMCOUNT=[爬取item数量] / CLOSESPIDER_PAGECOUNT=[爬取页数数量]
+scrapy crawl [爬虫名] -s CLOSESPIDER_ITEMCOUNT=[爬取item数量] / CLOSESPIDER_PAGECOUNT=[爬取页数数量]  -s HTTPCACHE_ENABLED=1（设置缓存）
 9.使用crawlspider
 scrapy genspider -t crawl [爬虫名] [allowed_domains(新手用‘web’)]
