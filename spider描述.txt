@@ -1,0 +1,5 @@
+基础入门：myproject\properties\properties\spiders\basic.py
+自定义双向爬取：myproject\properties\properties\spiders\manual.py
+rule双向爬取：myproject\properties\properties\spiders\easy.py
+selector索引页快速爬取多个item：myproject\properties\properties\spiders\easy.py
+基于Excel文件爬取：myproject\properties\generic\generic\spiders\fromcsv.py

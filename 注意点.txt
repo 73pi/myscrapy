@@ -1,3 +1,5 @@
+﻿中文显示：
+在settings.py中加入：FEED_EXPORT_ENCODING = 'utf-8'
 error：
 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to ...
 原因：主要是与allowed_domains冲突了被过滤了
