@@ -1,0 +1,6 @@
+比较多线程与twisted
+多线程输出混乱而twisted则可以解决这个问题
+basic：最基础的工作流
+thread_dome：使用线程
+twisted_dome：使用延迟和延迟链
+twisted_dome1：使用装饰器@defer.inlineCallbacks和设置并发限制
