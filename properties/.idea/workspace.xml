@@ -19,7 +19,7 @@
     <session id="-598514400">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.18" value="2" />
@@ -57,15 +57,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/properties/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="70" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/properties/items.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,8 +98,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/properties/spiders/image.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="39" column="8" selection-start-line="38" selection-start-column="10" selection-end-line="39" selection-end-column="8" />
+            <state relative-caret-position="229">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#25#68#0" expanded="true" />
               </folding>
@@ -337,7 +328,7 @@
     <entry file="file://$PROJECT_DIR$/properties/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="70" selection-end-column="35" />
+          <caret line="66" selection-start-line="66" selection-end-line="70" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -353,8 +344,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/properties/spiders/image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="39" column="8" selection-start-line="38" selection-start-column="10" selection-end-line="39" selection-end-column="8" />
+        <state relative-caret-position="229">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#25#68#0" expanded="true" />
           </folding>

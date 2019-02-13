@@ -1,0 +1,118 @@
+一/
+>>> from twisted.internet import defer
+>>>
+>>> d = defer.Deferred()
+>>> d.called
+False
+>>> d.callback()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: callback() takes exactly 2 arguments (1 given)
+>>> d.callback(a)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' is not defined
+>>> d.callback(1)
+>>> d.called
+True
+>>> d.result
+1
+========================================================
+二/
+>>> # no2
+...
+>>> d = defer.Deferred()
+>>> def foo(v):
+...     print 'foo called'
+...     return v+1
+...
+>>> d.addcallback(foo)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: Deferred instance has no attribute 'addcallback'
+>>> d.addCallback(foo)
+<Deferred at 0x3300b08>
+>>> d.called
+False
+>>> d.callback(3)
+foo called
+>>> d.called
+True
+>>> d.result
+4
+>>> d.callback('a')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Python27\lib\site-packages\twisted\internet\defer.py", line 460, in callback
+    self._startRunCallbacks(result)
+  File "C:\Python27\lib\site-packages\twisted\internet\defer.py", line 561, in _startRunCallbacks
+    raise AlreadyCalledError
+twisted.internet.defer.AlreadyCalledError
+========================================================
+三/
+>>> # no3
+...
+>>> d = defer.Deferred()
+>>> def status(*ds):
+...     return [(getattr(d, 'result', 'N/A'), len(d.callback)) for d in ds]
+...
+>>> def b_callback(arg):
+...     print 'b_callback called with arg=', arg
+...     return b
+...
+>>> def on_done(arg):
+...     print 'on_done called with arg=', arg
+...     return arg
+...
+>>> # 3.a
+...
+>>> a = defer.Deferred()
+>>> b = defer.Deferred()
+>>> a.addCallback(b_callback).addCallback(on_done)
+<Deferred at 0x392e548>
+>>> status(a, b)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in status
+TypeError: object of type 'instancemethod' has no len()
+>>> def status(*ds):
+...     return [(getattr(d, 'result', 'N/A'), len(d.callbacks)) for d in ds]
+...
+>>> status(a, b)
+[('N/A', 2), ('N/A', 0)]
+>>> a.callback(3)
+b_callback called with arg= 3
+>>> a.result
+<Deferred at 0x392e488> # 因为a的值就是一个延迟（b的延迟），需要b的回调结束才会有最后的值
+>>> b.callback(4)
+on_done called with arg= 4
+>>> status(a, b)
+[(4, 0), (None, 0)] #####注意：b.result不再为4而是None
+>>>
+>>> # 3.b
+...
+>>> a = defer.Deferred()
+>>> b = defer.Deferred()
+>>> a.addCallback(b_callback).addCallback(on_done)
+<Deferred at 0x392e7c8>
+>>> b.callback(4)
+>>> status(a, b)
+[('N/A', 2), (4, 0)]
+>>> a.callback(3)
+b_callback called with arg= 3
+on_done called with arg= 4 #注意
+>>> status(a, b)
+[(4, 0), (None, 0)]
+================================================================
+四/
+>>> # no4
+...
+>>> deferreds = [defer.Deferred() for i in xrange(5)]
+>>> join = defer.DeferredList(deferreds)
+>>> join.addCallback(on_done)
+<DeferredList at 0x3938b88>
+>>> for i in xrange(4):
+...     deferreds[i].callback(i)
+...
+>>> deferreds[4].callback(4)
+on_done called with arg= [(True, 0), (True, 1), (True, 2), (True, 3), (True, 4)]
