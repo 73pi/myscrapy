@@ -5,6 +5,7 @@ from scrapy.spiders import CrawlSpider, Rule
 from properties.items import PropertiesItem
 from scrapy.loader.processors import MapCompose
 from scrapy.loader import ItemLoader
+import datetime
 
 class EasySpider(CrawlSpider):
     name = 'easy'
@@ -36,5 +37,6 @@ class EasySpider(CrawlSpider):
 
         # Housekeeping fields
         l.add_value('url', response.url)
+        l.add_value('date', datetime.datetime.now())
 
         return l.load_item()
