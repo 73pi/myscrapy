@@ -1,0 +1,5 @@
+endpoint = 'https://maps.googleapis.com/maps/api/geocode/json'
+parms = [('address', address), ('sensor', false)]
+trep.get(endpoint, params=parms)
+
+# curl 'https://maps.googleapis.com/maps/api/geocode/jsonsensor=false&address=london'
