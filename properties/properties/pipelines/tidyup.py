@@ -11,5 +11,6 @@ from datetime import datetime
 # 使用一个管道对Item进行后期处理 作用于spider/easy.py:l.add_value('date', datetime.datetime.now())
 class TidyUp(object):
     def process_item(self, item, spider):
-        item['date'] = map(datetime.isoformat, item['date'])
+        if item['date']:
+            item['date'] = map(datetime.isoformat, item['date'])
         return item

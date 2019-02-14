@@ -58,9 +58,10 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    'scrapy.extensions.telnet.TelnetConsole': None,
-#}
+EXTENSIONS = {
+   'properties.latencies.Latencies': 500,
+}
+LATENCIES_INTERVAL = 5
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
@@ -70,7 +71,7 @@ ROBOTSTXT_OBEY = True
 # 每个pipeline后面有一个数值，这个数组的范围是0-1000，这个数值确定了他们的运行顺序，数字越小越优先
 ITEM_PIPELINES = {
    'scrapy.pipelines.images.ImagesPipeline': 1,
-   'properties.pipelines.tidyup.TidyUp': 100,
+   #'properties.pipelines.tidyup.TidyUp': 100,
 }
 IMAGES_STORE = 'images'
 IMAGES_THUMBS = {'small': (30, 30)}
