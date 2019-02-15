@@ -29,6 +29,7 @@ class MysqlWriter(object):
                            passwd='950210',
                            charset='utf8',
                            use_unicode=True,
+                           connect_timeout=5
                            )
         self.dbpool = adbapi.ConnectionPool('MySQLdb', **conn_kwargs)
 
