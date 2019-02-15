@@ -63,6 +63,7 @@ EXTENSIONS = {
 }
 LATENCIES_INTERVAL = 5
 
+
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 # 激活时：[scrapy.middleware] INFO: Enabled item pipelines:
@@ -70,7 +71,8 @@ LATENCIES_INTERVAL = 5
 #  'properties.pipelines.tidyup.TidyUp']
 # 每个pipeline后面有一个数值，这个数组的范围是0-1000，这个数值确定了他们的运行顺序，数字越小越优先
 ITEM_PIPELINES = {
-   'scrapy.pipelines.images.ImagesPipeline': 1,
+   #'scrapy.pipelines.images.ImagesPipeline': 1,
+   'properties.pipelines.mysql.MysqlWriter': 700,
    #'properties.pipelines.tidyup.TidyUp': 100,
 }
 IMAGES_STORE = 'images'
