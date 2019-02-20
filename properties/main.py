@@ -12,5 +12,5 @@ import sys
 import os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-execute(["scrapy", "crawl", "basic"])
+execute(["scrapy", "crawl", "manual"])
 # debug运行main

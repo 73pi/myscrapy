@@ -17,7 +17,7 @@ class MysqlWriter(object):
     @classmethod
     def from_crawler(cls, crawler):
         return cls()
-
+    
     def __init__(self):
         # Report connection error only once
         self.report_connection_error = True

@@ -1,4 +1,6 @@
-﻿中文显示：
+﻿关于xpath：
+在response.xpath()中的xpath路径其实是基于源码的元素位置而不是F12下Elements显示的位置，因为Elements可能还包括了js生产成的一些元素，scrapy处理爬取静态页面，利用scrapy-splash则可以爬取到动态生成的网页
+中文显示：
 在settings.py中加入：FEED_EXPORT_ENCODING = 'utf-8'
 ============================================
 error：
